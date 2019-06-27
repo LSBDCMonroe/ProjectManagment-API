@@ -30,6 +30,6 @@ app.get('/data', async (req, res) => {
 });
 
 app.listen(port, ()=>{console.log(`Server Running on Port:${port}.`); });
-require('mongoose').connect("mongodb://test12:test12@ds233167.mlab.com:33167/test1", { useNewUrlParser: true })
-   .then(() => { console.log("connection succesfull"); })
-   .catch(()=>{console.log("cannot connect")});
+// require('mongoose').connect("mongodb://test12:test12@ds233167.mlab.com:33167/test1", { useNewUrlParser: true })
+//    .then(() => { console.log("connection succesfull"); })
+//    .catch(()=>{console.log("cannot connect")});
