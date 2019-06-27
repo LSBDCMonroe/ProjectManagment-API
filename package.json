@@ -1,0 +1,41 @@
+{
+  "name": "project-managment-api",
+  "version": "0.0.0",
+  "description": "project",
+  "engines": {
+    "node": ">= 10.13 <11"
+  },
+  "dependencies": {
+    "tslib": "~1.9.3",
+    "cors": "^2.8.5",
+    "mongoose": "^5.4.19",
+    "puppeteer": "^1.17.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.0",
+    "@types/node": "^10.14.0",
+    "jest": "~24.8.0",
+    "prettier": "~1.17.0",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.0",
+    "tslint": "~5.16.0",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-microsoft-contrib": "~6.1.0",
+    "tsutils": "~3.10.0",
+    "typescript": "~3.4.0",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.11"
+  },
+  "scripts": {
+    "clean": "rimraf coverage build tmp",
+    "build": "tsc -p tsconfig.release.json",
+    "build:watch": "tsc -w -p tsconfig.release.json",
+    "lint": "tslint -t stylish --project \"tsconfig.json\"",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "start": "nodemon ./build/src/main.js"
+  },
+  "author": "",
+  "license": ""
+}
