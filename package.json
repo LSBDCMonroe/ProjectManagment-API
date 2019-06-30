@@ -34,7 +34,7 @@
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "start": "npm i && npm build && node ./build/src/main.js"
+    "start": "npm i && npm run build && node ./build/src/main.js"
   },
   "author": "",
   "license": ""
