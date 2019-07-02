@@ -1,4 +1,4 @@
 
 let userModel = require('./userModel');
-
-module.exports = { userModel };
+let test1 = require('./test')
+module.exports = { userModel,test1 };

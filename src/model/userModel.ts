@@ -1,50 +1,32 @@
-let mongoose = require('mongoose'),
-  utils = require('../utils/utils.js'),
-  Schema = mongoose.Schema;
+import * as Mongoose from 'mongoose';
 
-let schema = new Schema({
-  tokens: {
-    type: [{
-      _id: false,
-      identifier: String,
-      createdAt: Date,
-    }],
-    default: []
-  },
-  imageUrl: {type: String, default: "v1555894582/a/zvw5nufptxzutn9yo7yc.png"},
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
+let userSchema = new Mongoose.Schema({
+  firstName:String,
+//  lastName: { type: String, required: true },
+  userName: String,
   email: { type: String, unique: true },
   password: String,
-  dob: String,
-})
+  phone: Number,
+  organization: [{id: Number}],
+  joinedDate: Date
+});
 
 //this refers to document
-schema.pre('save', function(next) {
-  if (!this.createdAt) {
+userSchema.pre('save', function(next) {
+  if (!this.joinedDate) {
     //first time creating
-    this.createdAt = new Date();
-    this.tokens.push(utils.createToken());
+    this.joinedDate = new Date();
+//    this.joinedDate.push(utils.createToken());
   }
   next();
 });
 
-//this refers to query handle
-schema.statics.findUserWithToken = function(tokenIdentifer, email) {
-  return this.findOne({email})
-    .then(user => {
-      if (!user)
-        return undefined;
-      return user.tokens.find(t => t.identifier === tokenIdentifer)? user: undefined;
-    })
-}
-
 //this refers to document
-schema.methods.toJson = function() {
+userSchema.methods.toJson = function() {
   let obj = this.toObject();
   delete obj.tokens;
   delete obj.password;
   return obj;
 }
 
-module.exports = mongoose.model("users", schema);
+module.exports = Mongoose.model("users", userSchema);
