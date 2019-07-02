@@ -1,8 +1,8 @@
 # Project-Management-API <br>
 
 ```
-git clone https://github.com/LSBDCMonroe/project-management-api.git
-cd project-management-api
+git clone https://github.com/LSBDCMonroe/project-management-API.git
+cd project-management-API
 npm i
 npm start
 ```
