@@ -2,9 +2,9 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as cors from "cors";
 import {routes} from './routes';
-// const utils = require('./utils/utils');
 const port =  process.env.PORT || 3007;
 import * as bcrypt from 'bcrypt';
+import {userModel, test1 }from './model';
 const saltRounds = 10;
 
 const app = express();
@@ -18,9 +18,9 @@ app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
     next();
 });
-//    "start": "npm run build && nodemon ./build/src/main.js"
- let {userModel,test1 } = require('./model');
-
+// "start": "npm run build && nodemon ./build/src/main.js"
+// app.route(/signup)
+// .post()
 
  app.post('/signup',  async (req, res) => {
    let {password} = req.headers;
