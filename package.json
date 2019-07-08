@@ -2,6 +2,7 @@
   "name": "project-managment-api",
   "version": "0.0.0",
   "description": "project",
+  "main": "build/src/index.js",
   "engines": {
     "node": ">= 10.13 <11"
   },
@@ -13,7 +14,8 @@
     "tslib": "~1.9.3",
     "uuid": "^3.3.2",
     "express": "^4.16.4",
-      "ts-node": "^8.3.0"
+      "ts-node": "^8.3.0",
+      "typescript": "~3.4.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.0",
@@ -26,8 +28,7 @@
     "tslint": "~5.16.0",
     "tslint-config-prettier": "1.18.0",
     "tslint-microsoft-contrib": "~6.1.0",
-    "tsutils": "~3.10.0",
-    "typescript": "~3.4.0"
+    "tsutils": "~3.10.0"
   },
   "scripts": {
     "clean": "rimraf coverage build tmp",
@@ -36,7 +37,7 @@
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "start": "npm i && ts-node ./src/main.ts"
+    "start": "ts-node ./src/main.ts"
   },
   "author": "",
   "license": ""
