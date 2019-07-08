@@ -2,7 +2,7 @@ import * as Mongoose from 'mongoose';
 
 let userSchema = new Mongoose.Schema({
   firstName:String,
-//  lastName: { type: String, required: true },
+  lastName:  String,
   userName: String,
   email: { type: String, unique: true },
   password: String,
@@ -24,7 +24,6 @@ userSchema.pre('save', function(next) {
 //this refers to document
 userSchema.methods.toJson = function() {
   let obj = this.toObject();
-  delete obj.tokens;
   delete obj.password;
   return obj;
 }
