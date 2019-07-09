@@ -1,0 +1,103 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/signup": {
+      "post": {
+        "tags": [
+          "Search Text"
+        ],
+        "summary": "Singup",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Username",
+            "in": "header",
+            "description": "Specifies the username",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "Search Text"
+        ],
+        "summary": "Login",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Username",
+            "in": "header",
+            "description": "Specifies the username",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/project": {
+      "put": {
+        "tags": [
+          "Search Text"
+        ],
+        "summary": "Creating Project",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Username",
+            "in": "header",
+            "description": "Specifies the username",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/projects": {
+      "delete": {
+        "summary": "",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

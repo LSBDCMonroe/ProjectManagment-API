@@ -8,6 +8,4 @@ function createToken() {
   }
 }
 
-module.exports = {
-  createToken
-};
+module.exports = { createToken };
